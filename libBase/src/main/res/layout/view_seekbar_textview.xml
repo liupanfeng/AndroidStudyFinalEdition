@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="RtlCompat">
+    <LinearLayout
+        android:id="@+id/seek_text_layout"
+        android:layout_width="@dimen/dp_px_90"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/tv_progress_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/white_8"
+            android:textSize="@dimen/sp_px_30"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:maxHeight="@dimen/dp_px_6"
+        android:progressDrawable="@drawable/edit_seek_bar"
+        android:thumb="@drawable/edit_seek_bar_ball" />
+
+
+</LinearLayout>

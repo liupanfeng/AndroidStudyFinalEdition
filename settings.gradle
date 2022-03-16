@@ -1,0 +1,6 @@
+rootProject.name = "AndroidStudyFinalEdition"
+include ':app'
+include ':designpattern'
+include ':libCommon'
+include ':libBase'
+

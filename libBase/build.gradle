@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'bugly'
+
+/*bugly {
+    appId = rootProject.tsBugly.buglyAppId// 注册时分配的App ID
+    appKey = rootProject.tsBugly.buglyAppKey// 注册时分配的App Key
+}*/
+android {
+    compileSdkVersion rootProject.android.extCompileSdkVersion
+    buildToolsVersion rootProject.android.extBuildToolsVersion
+
+
+    defaultConfig {
+        minSdkVersion rootProject.android.extMinSdkVersion
+        targetSdkVersion rootProject.android.extTargetSdkVersion
+        versionCode rootProject.config.extVersionCode
+        versionName rootProject.config.extVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    testImplementation rootProject.ext.testDependencies.extTestJunit
+    androidTestImplementation rootProject.ext.testDependencies.extAndroidTestRunner
+    androidTestImplementation rootProject.ext.testDependencies.extTestEspresso
+    //android
+    api rootProject.ext.dependencies.extAppcompat
+    api rootProject.ext.dependencies.extAppcompatRecycler
+    api rootProject.ext.dependencies.extMutilDex
+    api rootProject.ext.dependencies.extGoogleGson
+    //友盟
+//    api rootProject.ext.dependencies.umengCommon
+//    api rootProject.ext.dependencies.umengAsms
+//    api rootProject.ext.dependencies.umengCrash
+    //图片
+    implementation rootProject.ext.dependencies.extBumptechGlide
+    //bugly
+}
