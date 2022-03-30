@@ -18,6 +18,9 @@ public class Swordsman extends BaseObservable {
     private String name;
     private String level;
 
+    public Swordsman() {
+    }
+
     public Swordsman(String name, String level) {
         this.name = name;
         this.level = level;

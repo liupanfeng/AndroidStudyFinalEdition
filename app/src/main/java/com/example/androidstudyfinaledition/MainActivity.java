@@ -4,20 +4,29 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.os.Message;
 import android.view.View;
 
+import com.example.androidstudyfinaledition.dagger.Dagger2Activity;
+import com.example.androidstudyfinaledition.dagger.DaggerUserComponent;
+import com.example.androidstudyfinaledition.dagger.User;
 import com.example.androidstudyfinaledition.databinding.ActivityMainBinding;
 import com.example.androidstudyfinaledition.mvvm.Swordsman;
+
+import javax.inject.Inject;
 
 /**
  * 此工程用于Android学习，单独的模块会使用单独的module，零散的东西会直接放在主工程
  * 学习过程中的内容重点在于理解透彻、深入，不拘泥于形式
  */
 public class MainActivity extends AppCompatActivity {
+
+
+//    @Inject
+//    User user;
 
     private final  Handler mHandler=new Handler(){
         @Override
@@ -30,13 +39,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+//        DaggerUserComponent.builder().build().injectMainActivity(this);
+//        user.setName("葫芦哇");
+//        user.setLevel("小仙童");
+
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         Swordsman swordsman=new Swordsman("张翠山","高手");
+//        swordsman.setName(user.getName());
+//        swordsman.setLevel(user.getLevel());
+
         binding.setSwordsman(swordsman);
         binding.btnChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 swordsman.setName("张无忌");
+                startActivity(new Intent(MainActivity.this, Dagger2Activity.class));
             }
         });
 
