@@ -24,8 +24,12 @@ public class MSObserable<T> {
      return new MSObserable(onSubscribe);
   }
 
-  public void subscrible(MSObserver<? super T> observer){
-   onSubscribe.subscribe(observer);
+ /**
+  * 订阅 这里有点反常的是 被观察者 调用这个方法 传的参数的是观察者
+  * @param observer
+  */
+ public void subscrible(MSObserver<? super T> observer){
+     onSubscribe.subscribe(observer);
   }
 
 }

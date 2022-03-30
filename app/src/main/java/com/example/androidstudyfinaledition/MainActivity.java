@@ -15,6 +15,7 @@ import com.example.androidstudyfinaledition.dagger.DaggerUserComponent;
 import com.example.androidstudyfinaledition.dagger.User;
 import com.example.androidstudyfinaledition.databinding.ActivityMainBinding;
 import com.example.androidstudyfinaledition.mvvm.Swordsman;
+import com.example.androidstudyfinaledition.rxjava.RxjavaActivity;
 
 import javax.inject.Inject;
 
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 swordsman.setName("张无忌");
 //                startActivity(new Intent(MainActivity.this, Dagger2Activity.class));
-                startActivity(new Intent(MainActivity.this, Dagger2Activity.class));
+                startActivity(new Intent(MainActivity.this, RxjavaActivity.class));
             }
         });
 
