@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 swordsman.setName("张无忌");
+//                startActivity(new Intent(MainActivity.this, Dagger2Activity.class));
                 startActivity(new Intent(MainActivity.this, Dagger2Activity.class));
             }
         });
