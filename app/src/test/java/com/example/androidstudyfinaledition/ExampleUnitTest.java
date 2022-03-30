@@ -71,7 +71,7 @@ public class ExampleUnitTest {
 
             @Override
             public void onNext(String s) {
-                System.out.println("观察者收到来自被观察者的消息---"+o);
+                System.out.println("观察者收到来自被观察者的消息---"+s);
             }
 
             @Override
