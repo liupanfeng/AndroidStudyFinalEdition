@@ -1,0 +1,2 @@
+Android以及Java技术总结
+1.designpattern 模块这个是设计模式相关
