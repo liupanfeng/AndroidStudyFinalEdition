@@ -54,8 +54,39 @@ public class ExampleUnitTest {
             }
         };
 
-        observable.subscribe(observer);
+        //observable.subscribe(observer);
+
+
+        //简写方式
+        Observable.create(new ObservableOnSubscribe<String>() {
+            @Override
+            public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+                emitter.onNext("hi 观察者");
+            }
+        }).subscribe(new Observer<String>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                System.out.println("onSubscribe");
+            }
+
+            @Override
+            public void onNext(String s) {
+                System.out.println("观察者收到来自被观察者的消息---"+o);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+
     }
+
 
 
 }
