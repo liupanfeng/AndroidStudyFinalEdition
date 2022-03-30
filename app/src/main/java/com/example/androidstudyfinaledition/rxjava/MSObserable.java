@@ -24,4 +24,8 @@ public class MSObserable<T> {
      return new MSObserable(onSubscribe);
   }
 
+  public void subscrible(MSObserver<? super T> observer){
+   onSubscribe.subscribe(observer);
+  }
+
 }
