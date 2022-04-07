@@ -1,2 +1,3 @@
 Android以及Java技术总结
 1.designpattern 模块这个是设计模式相关
+2.com/example/androidstudyfinaledition/ExampleUnitTest.java 这个添加了rxjava的各种使用例子。
