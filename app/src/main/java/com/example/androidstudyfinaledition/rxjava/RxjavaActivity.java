@@ -54,11 +54,18 @@ public class RxjavaActivity extends AppCompatActivity {
 
         //interval
         //创建一个按固定时间间隔发射整数序列的 Observable，相当于定时器
-        Observable.interval(50, 200, TimeUnit.MILLISECONDS).subscribe(new Consumer<Long>() {
-            @SuppressLint("CheckResult")
+//        Observable.interval(50, 200, TimeUnit.MILLISECONDS).subscribe(new Consumer<Long>() {
+//            @SuppressLint("CheckResult")
+//            @Override
+//            public void accept(Long aLong) throws Exception {
+//                System.out.println("观察者收到来自被观察者的消息---"+aLong);
+//            }
+//        });
+
+        Observable.just("云韵","古薰儿","美杜莎").startWith("萧炎").delay(3000,TimeUnit.MILLISECONDS).subscribe(new Consumer<String>() {
             @Override
-            public void accept(Long aLong) throws Exception {
-                System.out.println("观察者收到来自被观察者的消息---"+aLong);
+            public void accept(String s) throws Exception {
+                System.out.println("accept---"+s);
             }
         });
     }
