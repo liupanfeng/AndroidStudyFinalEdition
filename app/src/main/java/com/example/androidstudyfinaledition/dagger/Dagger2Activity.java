@@ -18,7 +18,7 @@ public class Dagger2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dagger2);
-        DaggerUserComponent.builder().build().injectDagger2Activity(this);
+//        DaggerUserComponent.builder().build().injectDagger2Activity(this);
         user.setName("葫芦哇");
         user.setLevel("小神仙");
         Toast.makeText(this,user.getName()+"是一个"+user.getLevel(),Toast.LENGTH_LONG).show();

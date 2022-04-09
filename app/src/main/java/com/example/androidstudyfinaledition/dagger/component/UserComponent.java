@@ -1,6 +1,9 @@
-package com.example.androidstudyfinaledition.dagger;
+package com.example.androidstudyfinaledition.dagger.component;
 
-import com.example.androidstudyfinaledition.MainActivity;
+import com.example.androidstudyfinaledition.dagger.Dagger2Activity;
+import com.example.androidstudyfinaledition.dagger.module.UserModule;
+
+import javax.inject.Singleton;
 
 import dagger.Component;
 

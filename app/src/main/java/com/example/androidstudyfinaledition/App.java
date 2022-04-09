@@ -2,6 +2,9 @@ package com.example.androidstudyfinaledition;
 
 import android.app.Application;
 
+import com.example.androidstudyfinaledition.dagger.component.AppComponent;
+import com.example.androidstudyfinaledition.dagger.component.DaggerAppComponent;
+
 /**
  * All rights Reserved, Designed By www.meishesdk.com
  *
@@ -12,9 +15,15 @@ import android.app.Application;
  */
 public class App extends Application {
 
+    private AppComponent mAppComponent;
     @Override
     public void onCreate() {
         super.onCreate();
+        mAppComponent=DaggerAppComponent.builder().build();
+    }
 
+
+    public AppComponent getAppComponent() {
+        return mAppComponent;
     }
 }

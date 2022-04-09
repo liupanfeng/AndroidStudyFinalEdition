@@ -1,4 +1,8 @@
-package com.example.androidstudyfinaledition.dagger;
+package com.example.androidstudyfinaledition.dagger.module;
+
+import com.example.androidstudyfinaledition.dagger.User;
+
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;

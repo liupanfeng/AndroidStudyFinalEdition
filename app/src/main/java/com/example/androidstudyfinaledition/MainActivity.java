@@ -6,13 +6,11 @@ import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.androidstudyfinaledition.dagger.Dagger2Activity;
-import com.example.androidstudyfinaledition.dagger.DaggerUserComponent;
-import com.example.androidstudyfinaledition.dagger.User;
+import com.example.androidstudyfinaledition.dagger.obj.DatabaseObject;
 import com.example.androidstudyfinaledition.databinding.ActivityMainBinding;
 import com.example.androidstudyfinaledition.mvvm.Swordsman;
 import com.example.androidstudyfinaledition.rxjava.RxjavaActivity;
@@ -25,29 +23,19 @@ import javax.inject.Inject;
  */
 public class MainActivity extends AppCompatActivity {
 
-
-//    @Inject
-//    User user;
-
-    private final  Handler mHandler=new Handler(){
-        @Override
-        public void handleMessage(@NonNull Message msg) {
-            super.handleMessage(msg);
-        }
-    };
+    @Inject
+    DatabaseObject databaseObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        DaggerUserComponent.builder().build().injectMainActivity(this);
-//        user.setName("葫芦哇");
-//        user.setLevel("小仙童");
+        ((App)getApplication()).getAppComponent().injectMainActivity(this);
 
+        databaseObject.setValue("小仙童");
+        Toast.makeText(this, databaseObject.getValue(), Toast.LENGTH_SHORT).show();
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         Swordsman swordsman=new Swordsman("张翠山","高手");
-//        swordsman.setName(user.getName());
-//        swordsman.setLevel(user.getLevel());
 
         binding.setSwordsman(swordsman);
         binding.btnChange.setOnClickListener(new View.OnClickListener() {
