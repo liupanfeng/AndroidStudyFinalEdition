@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.androidstudyfinaledition.dagger.Dagger2Activity;
 import com.example.androidstudyfinaledition.dagger.obj.DatabaseObject;
 import com.example.androidstudyfinaledition.databinding.ActivityMainBinding;
+import com.example.androidstudyfinaledition.datastructure.DataStructureActivity;
 import com.example.androidstudyfinaledition.mvvm.Swordsman;
 import com.example.androidstudyfinaledition.rxjava.RxjavaActivity;
 
@@ -19,7 +20,6 @@ import javax.inject.Inject;
 
 /**
  * 此工程用于Android学习，单独的模块会使用单独的module，零散的东西会直接放在主工程
- * 学习过程中的内容重点在于理解透彻、深入，不拘泥于形式
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 swordsman.setName("张无忌");
 //                startActivity(new Intent(MainActivity.this, Dagger2Activity.class));
-                startActivity(new Intent(MainActivity.this, RxjavaActivity.class));
+//                startActivity(new Intent(MainActivity.this, RxjavaActivity.class));
+                startActivity(new Intent(MainActivity.this, DataStructureActivity.class));
             }
         });
 

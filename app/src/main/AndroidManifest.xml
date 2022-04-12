@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidStudyFinalEdition">
         <activity
+            android:name=".datastructure.DataStructureActivity"
+            android:exported="false" />
+        <activity
             android:name=".rxjava.RxjavaActivity"
             android:exported="false" />
         <activity
