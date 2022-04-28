@@ -4,3 +4,5 @@ include ':designpattern'
 include ':libCommon'
 include ':libBase'
 
+include ':annotation'
+include ':lib'

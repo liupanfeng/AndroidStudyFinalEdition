@@ -3,6 +3,10 @@ apply from: "config.gradle"
 buildscript {
     ext.kotlin_version = "1.5.0"
     repositories {
+        //配置本地artifactory 仓库 加快编译速度
+        maven{
+            url 'http://localhost:8081/artifactory/android_group/'
+        }
         google()
         mavenCentral()
     }
@@ -17,6 +21,10 @@ buildscript {
 
 allprojects {
     repositories {
+        //配置本地artifactory 仓库 加快编译速度
+        maven{
+            url 'http://localhost:8081/artifactory/android_group/'
+        }
         google()
         mavenCentral()
     }
