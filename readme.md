@@ -7,4 +7,6 @@ Android以及Java技术总结
     处理网络嵌套的问题 线程自由切换
     防抖动
     
-4.com/example/androidstudyfinaledition/ftp  添加Ftp 下载、上传、文件压缩、解压功能 
+4.com/example/androidstudyfinaledition/ftp  添加Ftp 下载、上传、文件压缩、解压功能  
+
+5.src/main/java/com/meishe/lib/BindClassProcess.java 这个是编译时注解处理器源码部分 
